@@ -10,12 +10,12 @@ public class Miniräknaren extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		Group root = new Group();
-		Scene scene = new Scene(root, 500, 500);
+		Knapp knapp = new Knapp();
+		Scene scene = new Scene(Knapp.gridpane, 500, 500);
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		Knapp knapp = new Knapp();
-		root.getChildren().add(knapp);
+		
+		
 	}
 	public static void main(String[] args) {
 		launch();
