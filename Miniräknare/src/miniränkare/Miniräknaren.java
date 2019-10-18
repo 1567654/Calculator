@@ -11,7 +11,7 @@ public class Miniräknaren extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		Knapp knapp = new Knapp();
-		Scene scene = new Scene(Knapp.gridpane, 500, 500);
+		Scene scene = new Scene(knapp.gridpane, 500, 500);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		
