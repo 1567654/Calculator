@@ -1,8 +1,9 @@
 package miniränkare;
 
 import javafx.application.Application;
-import javafx.scene.Group;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Miniräknaren extends Application{
@@ -11,7 +12,11 @@ public class Miniräknaren extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
 		Knapp knapp = new Knapp();
-		Scene scene = new Scene(knapp.gridpane, 500, 500);
+		VBox vertical = new VBox(); 
+		vertical.setSpacing(20);
+		ObservableList list = vertical.getChildren();
+		list.addAll(knapp.textfield, knapp.gridpane);
+		Scene scene = new Scene(vertical, 500, 500);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		
