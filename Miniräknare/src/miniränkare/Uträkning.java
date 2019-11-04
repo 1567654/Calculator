@@ -9,6 +9,7 @@ public class Uträkning{
 		Subraktion subtraktion = new Subraktion();
 		Multiplikation multiplikation = new Multiplikation();
 		Division division = new Division();
+		RestDivision restDivision = new RestDivision();
 		
 		String input = expression;
 		int operatorIndex = 0;
@@ -16,6 +17,24 @@ public class Uträkning{
 		double sum = 0;
 
 		for (char c : input.toCharArray()) {
+			if(c == 'R') {
+				String tal = input.substring(1,input.length());
+				double nyTal = new Double (tal);
+				sum = Math.sqrt(nyTal);
+				summa = Double.toString(sum);
+				return summa;
+			}
+			
+			if(c == '%') {
+				String tal1 = input.substring(0,operatorIndex);
+				String tal2 = input.substring(operatorIndex+1, input.length());
+				double nyTal1 = new Double(tal1);
+				double nyTal2 = new Double(tal2);
+				sum = restDivision.tal(nyTal1, nyTal2);
+				summa = Double.toString(sum);
+				return summa;
+			}
+			
 			if (c == '+') {
 				String tal1 = input.substring(0,operatorIndex);
 				String tal2 = input.substring(operatorIndex+1, input.length());

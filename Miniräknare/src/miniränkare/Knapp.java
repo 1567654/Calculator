@@ -19,7 +19,7 @@ public class Knapp{
 		textfield.setEditable(false);
 		
 		// Skapar knappar med en storlek och olika namn och lägger de i en arraylist
-		char[] numpad = {'1','2','3','/','4','5','6','*','7','8','9','-',' ','0','.','+'};
+		char[] numpad = {'1','2','3','/','4','5','6','*','7','8','9','-','R','0','.','+'};
 		buttonList = new ArrayList<Button>();
 		for (char key : numpad) {
 			String synum = key + "";
@@ -51,8 +51,15 @@ public class Knapp{
 		String toString2 = 'C' + "";
 		Button clear = new Button(toString2);
 		clear.setMinSize(30, 30);
-		gridpane.add(clear, 2, 5);
+		gridpane.add(clear, 0, 5);
 		clear.setOnAction(event ->{textfield.clear();});
+		
+		String toString3 = '%' + "";
+		Button modulus = new Button(toString3);
+		modulus.setMinSize(30, 30);
+		gridpane.add(modulus, 2, 5);
+		modulus.setOnAction(event ->{textfield.textProperty().set(textfield.textProperty().get() +'%');});
+
 	}
 	
 		
