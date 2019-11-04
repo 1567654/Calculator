@@ -4,14 +4,13 @@ package miniränkare;
 public class Uträkning{
 	
 
-	public String beräkning(){
-		Knapp knapp = new Knapp();
+	public String beräkning(String expression){
 		Addition addition = new Addition();
 		Subraktion subtraktion = new Subraktion();
 		Multiplikation multiplikation = new Multiplikation();
 		Division division = new Division();
 		
-		String input = knapp.textfield.getText();
+		String input = expression;
 		int operatorIndex = 0;
 		String summa="";
 		double sum = 0;
